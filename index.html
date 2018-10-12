@@ -40,30 +40,30 @@
       
   <div > 
        X Value:
-    <input id="duplicaterX" type="number" step="any" placeholder="Enter X-Value"> Y Value:
-    <input id="duplicaterY" type="number" step="any" placeholder="Enter Y-Value">
+    <input id="duplicatorX0" type="number" step="any" placeholder="Enter X-Value"> Y Value:
+    <input id="duplicatorY0" type="number" step="any" placeholder="Enter Y-Value">
  </div>
   <button id="button" onlick="duplicate()">Click me</button>
   <script type="text/javascript">
     document.getElementById('button').onclick = duplicate;
 
 
-var i = 0;
-var z = 0;
-var originalX = document.getElementById('duplicaterX');
-var originalY = document.getElementById('duplicaterY');
+ iX = 0;
+ zY = 0;
+var originalX = document.getElementById('duplicatorX0');
+var originalY = document.getElementById('duplicatorY0');
 
 function duplicate() {
     var clone = originalX.cloneNode(true); // "deep" clone
-    clone.id = "duplicetorX" + ++i; // there can only be one element with an ID
+    clone.id = "duplicatorX" + ++iX; // there can only be one element with an ID
     originalX.parentNode.appendChild(clone);
 
      var clone = originalY.cloneNode(true); // "deep" clone
-    clone.id = "duplicetorY" + ++z; // there can only be one element with an ID
+    clone.id = "duplicatorY" + ++zY; // there can only be one element with an ID
     originalY.parentNode.appendChild(clone);
 }
   </script>
-
+<button id="add"></button>
   
    <button id="renderButton">Add DataPoint & Render</button>
      <a href="#about" class="btn btn-primary js-scroll-trigger"  id="new_data" >new data series</a>
