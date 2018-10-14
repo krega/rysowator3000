@@ -104,7 +104,7 @@ for (var i = 0; i < onlyResult.length; i++) {
   });
 }
 }
-var chart = new CanvasJS.Chart("chartContainer", {
+var chart = new CanvasJS.Chart("pointChart", {
 
   zoomEnabled: true,
   responsive: true,
