@@ -109,10 +109,7 @@ var chart = new CanvasJS.Chart("pointChart", {
   zoomEnabled: true,
   responsive: true,
 
-  title: {
-    text: " Zależność gęstości prądu od czasu osadzania powłoki przy napięciu wynoszącym " 
-    +document.getElementById('napiecie_pradu').value + "V",
-  },
+  
   exportEnabled: true,
   axisX: {
     title:"Czas [s]",
