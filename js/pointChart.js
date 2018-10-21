@@ -14,7 +14,10 @@
     for(var z=0;z<=index;z++)
     {
      // console.log("z",z);
+      if(document.getElementById('duplicatorX'+z))
+        {
       tabX.push(parseFloat(document.getElementById('duplicatorX'+ z ).value));
+    }
       //console.log(document.getElementById('duplicatorX'+ z ).value);
     }
   //console.log("tabX",tabX);
@@ -82,12 +85,36 @@
   }
 
   function deleteDiv(){
+    console.log("index",index);
+   console.log("zy",zY);
+      for(var i=1;i<=index;i++){
+        console.log("i",i);
+      // document.getElementById('duplicatorX'+1).remove();
+        if(document.getElementById('duplicatorX'+i))
+        {
+            document.getElementById('duplicatorX'+i).remove();
+        }
 
-      for(var i=1;i<=iX;i++){
-      document.getElementById('duplicatorX'+ i).remove();
-      document.getElementById('duplicatorY'+ i).remove();
+
       }
-     // console.log("usuwanie");
+     
+
+      
+      for(var i=1;i<=delete_counterY;i++){
+        console.log("i",i);
+      // document.getElementById('duplicatorX'+1).remove();
+        if(document.getElementById('duplicatorY'+i))
+        {
+            document.getElementById('duplicatorY'+i).remove();
+        }
+
+
+      }
+
+ 
+
+      
+      
   }
    function draw(){
   var Xname;
@@ -167,40 +194,7 @@
           })
         }
 
-     /* for(var i=0;i<tabSR.length;i++){
-       dataPointss.push({
-           y:tabSR[i]
-            })
-      }
-      console.log("dataPointss", tabSR.length);
-     /* for(var i=0;i<tabMax;i++)
-      {
-         tabMinMax[i]=tabMax;
-        for(var y=0;y<tabMin;y++)
-        {
-          tabMinMax[y]=tabMin;
-          tabMinMax[i]=tabMax;
-        }
-      }
-      tabMinMax.shift();
-      /*for(var i=0;i<tabY.length;i++)
-      {
-       errorPoints.push({
-           x:tabY[i]
-            })
-      }*/
-     /* for(var i=0;i<tabMax.length;i++)
-      {
-        errorPoints.push({
-           y:tabMax[i]
-            })
-      }*/
-     /* for(var i=0;i<tabMinMax.length;i++)
-      {
-        errorPoints.push({
-           y:tabMinMax[i]
-            })
-      }*/
+    
       console.log("tabMinMax", tabMinMax);
      console.log("errorPoints", errorPoints);
       console.log(document.getElementById("nazwaLinii").value);
@@ -212,6 +206,7 @@
 
           showInLegend: true, 
           name:  document.getElementById("nazwaLinii").value,
+          lineDashType: "dash",
           dataPoints: dataPointss,
 
         };
@@ -246,8 +241,11 @@
       tabX.pop();
       tabY.pop();
       tabSR.pop();
-      tabMin.pop();
-      tabMax.pop();
+     
+  }
+  for (var i = tabMin.length - 1; i >= 0; i--) {
+    tabMin.pop();
+    tabMax.pop();
   }
   //console.log("po czyszczenieu", tabX);
   iX=0;   

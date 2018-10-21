@@ -227,10 +227,15 @@
   top: 330px;
   right: 204px;
 }*/
-#button{  clear: both;
+#buttonX{  clear: both;
+   position: absolute;
+  top:300px;
+  right: 500px;
+}
+#buttonY{  clear: both;
    position: absolute;
   top:376px;
-  right: 204px;
+  right: 500px;
 }
 #renderButton{  clear: both;
  text-align: center;
