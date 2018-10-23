@@ -6,9 +6,33 @@ gestoscPradu = [];
 cl=0;
 max=0;
 min=0;
-console.log(gestoscPradu);
+function fakechart(){
+  var chart = new CanvasJS.Chart("pointChart", {
 
-//console.log(onlyResult);
+  zoomEnabled: true,
+  responsive: true,
+
+  
+  exportEnabled: true,
+  axisX: {
+    title:"Czas [s]",
+   
+  },
+  axisY:{
+    title: "Gęstość prądu ",
+   
+     },
+  
+});
+
+chart.render();
+ }
+function resetValue(){
+document.getElementById('pointChart');
+
+console.log("gestoscPradu");
+}
+
 function handleFiles(files) {
     // Check for the various File API support.
     if (window.FileReader) {
@@ -47,12 +71,11 @@ function processData(csv) {
          resultFromFile.push(lines);
     }
 
- //console.log(resultFromFile);
+
 
 
 
  
-//if your csv file contains the column names as the first line
 function processDataAsObj(csv){
     var allTextLines = csv.split(/\r\n|\n/);
     var lines = [];
@@ -77,9 +100,13 @@ function errorHandler(evt) {
         alert("Canno't read file !");
     }
 }
+document.getElementById ("Gestosc_pradu").addEventListener ("click", fakechart, true);
 
  
 document.getElementById ("cli").addEventListener ("click", show, true);
+ 
+
+
  function show()
 {
  max=Math.max(...gestoscPradu);

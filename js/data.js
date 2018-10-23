@@ -1,8 +1,11 @@
+if(document.getElementById('poinChart')){
+  document.getElementById('pointChart').reset();
+}
 function full(){
  clearrr();
 
 
-//console.log(resultFromFile);
+
   for(var i =0;i<resultFromFile.length;i++)
   {
     onlyResult[i]=resultFromFile[1][i][1];
@@ -57,6 +60,7 @@ document.getElementById ("cli").addEventListener ("click", full, true);
 
 document.getElementById ("cli").addEventListener ("click", clear, true);
 
+
 function clear()
 {
   for(var i = 0;i<resultFromFile.length;i++)
@@ -65,7 +69,7 @@ function clear()
 }
 
 resultFromFile.length=0;
-//console.log(resultFromFile);
+
 
 }
 

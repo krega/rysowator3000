@@ -19,8 +19,8 @@
 
 #csvFileInput{
   position: fixed;
-  top:192px;
-  left: 204px;
+  top:255px;
+  left: 50px;
  }
  #time{
 
@@ -34,11 +34,12 @@
   bottom:14px;
   right:9px;
   border-radius:22px;
-  width:220px;
+  width:200px;
+
   box-sizing:border-box;
   position: fixed;
-  top: 238px;
-  left: 204px;
+  top: 301px;
+  left: 50px;
  	
  }
  #pole_probki
@@ -53,11 +54,11 @@
   bottom:14px;
   right:9px;
   border-radius:22px;
-  width:220px;
+   width:200px;
   box-sizing:border-box;
   position: fixed;
-  top: 284px;
-  left: 204px;
+  top: 347px;
+  left: 50px;
  	
  }
  #jednostka
@@ -72,11 +73,11 @@
   bottom:14px;
   
   border-radius:22px;
-  width:220px;
+  width:200px;
   box-sizing:border-box;
   position: fixed;
-  top: 330px;
-  left: 204px;
+  top: 393px;
+  left: 50px;
  	
  }
  #napiecie_pradu
@@ -92,11 +93,11 @@
   bottom:14px;
   right:9px;
   border-radius:22px;
-  width:220px;
+   width:200px;
   box-sizing:border-box;
   position: fixed;
-  top:376px;
-  left: 204px;
+  top:439px;
+  left: 50px;
 
  	
  }
@@ -112,11 +113,11 @@
   bottom:14px;
   right:9px;
   border-radius:22px;
-  width:220px;
+  width:200px;
   box-sizing:border-box;
   position: fixed;
-  top:422px;
-  left: 204px;
+  top:485px;
+  left: 50px;
 }
 #maximum
 {
@@ -130,16 +131,16 @@
   bottom:14px;
   right:9px;
   border-radius:22px;
-  width:220px;
+   width:200px;
   box-sizing:border-box;
   position: fixed;
-  top:468px;
-  left: 204px;
+  top:531px;
+  left: 50px;
 }
 #cli{
   position: fixed;
-  top:514px;
-  left: 204px;
+  top:577px;
+  left: 50px;
 }
 #nameOfPoint{
   position: fixed;
@@ -150,30 +151,24 @@
  {
   
    position: fixed;
+   top:337px;
+   left: 260px;
+  margin: auto;
+  height: 330px;
+  width: 80vw;
+  z-index:  1;
+ }
+#pointCharted
+{
+  
+   position: fixed;
    top:582px;
-   left: 204px;
+   left: 264px;
   margin: auto;
   
   width: 80vw;
  }
 
-#Przyrost_masy{
-  text-align: center;
- border:none;
-  outline:none;
-  display:inline-block;
-  height:34px;
-  vertical-align:middle;
-  position:relative;
-  bottom:14px;
-  right:9px;
-  border-radius:22px;
-  width:220px;
-  box-sizing:border-box;
-   position: fixed;
-  top:192px;
-  right: 204px;
-}
 #nazwaLinii{
    text-align: center;
  border:none;
@@ -188,10 +183,10 @@
   width:220px;
   box-sizing:border-box;
   position: fixed;
-  top: 238px;
-  right: 204px;
+  top: 38px;
+  left: 709px;
 }
-#copy{  clear: both;
+/*#copy{  clear: both;
   float: left;
   text-align: center;
  border:none;
@@ -227,46 +222,60 @@
   top: 330px;
   right: 204px;
 }*/
-#buttonX{  clear: both;
-   position: absolute;
-  top:300px;
-  right: 500px;
-}
 #buttonY{  clear: both;
    position: absolute;
-  top:376px;
-  right: 500px;
+  top:147px;
+  left: 564px;
 }
-#renderButton{  clear: both;
- text-align: center;
- border:none;
-  outline:none;
-  display:inline-block;
-  height:34px;
-  vertical-align:middle;
-  position:absolute;
-  bottom:14px;
-  right:9px;
-  border-radius:22px;
-  width:220px;
-  box-sizing:border-box;
-  position: absolute;
-  top:422px;
-  right: 204px;
+#buttonX{  clear: both;
+   position: absolute;
+  top:107px;
+  left: 564px;
 }
+#copyY{
+   display: grid;
+    float: right;
+  position: fixed;
+top:107px;
+left: 709px;
+}
+#copyX{
+  /*display: grid;*/
+  grid-auto-columns: 70%;
+
+    float: right;
+  position: fixed;
+top:107px;
+left: 894px;
+}
+ 
+
+
 #remove{ clear: both;
   display:inline-block;
   position: absolute;
-  top:468px;
-  right: 204px;
+  top:187px;
+  left: 564px;
 
+}
+#Gestosc_pradu{
+  top:39px;
+  left: 50px;
+   position:absolute; ;
+}
+#masaOdNapiecia{
+  top:108px;
+  left: 50px;
+   position:absolute; 
+}
+#masaOdCzasu{
+  top:177px;
+  left: 50px;
+   position:absolute; 
 }
 
 
 
 
 
-canvas {
-    width: 100% ;
-    height: auto ;
-}
+
