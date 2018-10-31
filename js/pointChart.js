@@ -3,19 +3,14 @@
   tabSR=[];
   tabMin=[];
   tabMax=[];
-   var pointChart;
-  
+  var pointChart;
   function point(){
-
-
   for(var i=0;i<=zY;i++)
   {
     tabY[i]=parseFloat(document.getElementById('duplicatorY'+ i).value);
   }
-
     for(var z=0;z<=index;z++)
     {
-    
       if(document.getElementById('duplicatorX'+z))
         {
       tabX.push(parseFloat(document.getElementById('duplicatorX'+ z ).value));
@@ -36,7 +31,6 @@
       {
         tabSR.push(tabX[z]);
       }
-      
       if(tabX[z]>max)
       {
         max=tabX[z];
@@ -45,13 +39,10 @@
       {
       min=tabX[z];
       }
-     
-      
-     
-     srednia +=tabX[z];
-     if(z==(a-1)){
-   
-     srednia=srednia/b;
+
+      srednia +=tabX[z];
+      if(z==(a-1)){
+      srednia=srednia/b;
       tabSR.push(srednia);
       srednia=0;
       tabMin.push(min);
@@ -59,47 +50,28 @@
       min=99999999999999999999999999999999999;
       max=0;
       a=a+b;
-      
-     }
-     
-   
-
+      }
     }
-  
   }
 
   function deleteDiv(){
-    
-      for(var i=1;i<=index;i++){
+     for(var i=1;i<=index;i++){
         console.log("i",i);
-     
         if(document.getElementById('duplicatorX'+i))
         {
             document.getElementById('duplicatorX'+i).remove();
         }
-
-
-      }
-     
-
-      
-      for(var i=1;i<=delete_counterY;i++){
+    }
+   for(var i=1;i<=delete_counterY;i++){
         console.log("i",i);
       
         if(document.getElementById('duplicatorY'+i))
         {
             document.getElementById('duplicatorY'+i).remove();
         }
-
-
       }
-
- 
-
-      
-      
   }
-   function draw(){
+  function draw(){
   var Xname;
   var Yname;
 
@@ -126,10 +98,7 @@
        axisY:{
           title: Yname,
       },
-
-
-
-      data: [
+     data: [
       {
        
       }
@@ -143,57 +112,54 @@
   document.getElementById ("remove").addEventListener ("click", deleteDiv, true);
 
 
-  function rysuj(){  
-     
-     
-            var tabMinMax = new Array(tabMax.length);
-
-              for (var i = 0; i < tabMinMax.length; i++) {
-              tabMinMax[i] = new Array(tabMin.length);
-          }
-    
-      var dataPointss=[];  
-      var errorPoints=[];
-       for(var i=0;i<tabY.length;i++){
+function rysuj(){  
+ var tabMinMax = new Array(tabMax.length);
+ for (var i = 0; i < tabMinMax.length; i++) {
+      tabMinMax[i] = new Array(tabMin.length);
+       }
+var dataPointss=[];  
+var errorPoints=[];
+ for(var i=0;i<tabY.length;i++){
        dataPointss.push({
            x:tabY[i],
            y:tabSR[i]
             })
       } 
+console.log(tabMin);
+   for(var i=0;i<tabMax.length;i++)
+    {
+     errorPoints.push({
+     y:[tabMax[i],tabMin[i]],
+     x:tabY[i],
+     })
+    }
+    var newSeries = {
+     type: "spline",
+     showInLegend: true, 
+     showInLegend: true, 
+     name:  document.getElementById("nazwaLinii").value,
+     lineDashType: "dash",
+     axisX:{
+           labelFontFamily: "arial",
+         labelFontSize: 200,
+         valueFormatString: "#,##,###",
+      },
+      axisY:{
+        labelFontFamily: "arial",
+         labelFontSize: 20,
+         valueFormatString: "#,##,###",
+      },
+     
 
-   
-       console.log(tabMin);
-        for(var i=0;i<tabMax.length;i++)
-        {
-          errorPoints.push({
-            y:[tabMax[i],tabMin[i]],
-            x:tabY[i],
-          })
-        }
-
-    
-   
-   
-      var newSeries = {
-
-          type: "spline",
-          showInLegend: true, 
-
-          showInLegend: true, 
-          name:  document.getElementById("nazwaLinii").value,
-          lineDashType: "dash",
-          dataPoints: dataPointss,
-
-        };
+     dataPoints: dataPointss,
+       };
         var newError ={
           type: "error",
-          whiskerLength: 15,
+          whiskerLength: 15, 
          
-          dataPoints: errorPoints
-        
+          dataPoints: errorPoints 
         };
-      
- pointChart.options.data.push(newSeries);
+      pointChart.options.data.push(newSeries);
   pointChart.options.data.push(newError);
       pointChart.render();
       $("#removerr").click(function(){ 
@@ -201,25 +167,20 @@
       pointChart.render();
   });
   
-
-  };
-
+};
 
 document.getElementById ("masaOdNapiecia").addEventListener ("click", draw, true);
-    document.getElementById ("masaOdCzasu").addEventListener ("click", draw, true);
+document.getElementById ("masaOdCzasu").addEventListener ("click", draw, true);
 
-  function clearTabXY(){
-    
+  function clearTabXY(){   
   for(var i=0;i<tabX.length;i++)
   {
       tabX.pop();
       tabY.pop();
-      tabSR.pop();
-     
+      tabSR.pop();     
   }
   tabX.length=0;
    tabSR.length=0;
-
   for (var i = tabMin.length - 1; i >= 0; i--) {
     tabMin.pop();
     tabMax.pop();
@@ -234,6 +195,5 @@ document.getElementById ("masaOdNapiecia").addEventListener ("click", draw, true
   console.log("po czyszczenieu", tabSR);
   iX=0;   
   zY=0;
-
   }
   document.getElementById ("removerr").addEventListener ("click", clearTabXY, true);
