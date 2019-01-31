@@ -86,17 +86,29 @@
       Yname= "Przyrost masy powłoki [mg/cm²]";
 
   }
+
+  
+
  pointChart = new CanvasJS.Chart("pointChart",
   { 
+    
       zoomEnabled: true,
       responsive: true,
       exportEnabled: true,
        showInLegend: true, 
+       
+       
        axisX: {
       title: Xname,
+       labelFontStyle: "arial",
+     titleFontStyle: "arial",
+     
       },
        axisY:{
           title: Yname,
+           labelFontStyle: "arial",
+     titleFontStyle: "arial",
+     
       },
      data: [
       {
@@ -139,7 +151,7 @@ console.log(tabMin);
      showInLegend: true, 
      name:  document.getElementById("nazwaLinii").value,
      lineDashType: "dash",
-     axisX:{
+    /* axisX:{
            labelFontFamily: "arial",
          labelFontSize: 200,
          valueFormatString: "#,##,###",
@@ -148,7 +160,7 @@ console.log(tabMin);
         labelFontFamily: "arial",
          labelFontSize: 20,
          valueFormatString: "#,##,###",
-      },
+      },*/
      
 
      dataPoints: dataPointss,

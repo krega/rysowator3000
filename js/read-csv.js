@@ -107,13 +107,18 @@ var chart = new CanvasJS.Chart("pointChart", {
   zoomEnabled: true,
   responsive: true,
   exportEnabled: true,
+ 
   axisX: {
      
     title:"Czas [s]",
+   labelFontStyle: "arial",
+   titleFontStyle: "arial",
    },
   axisY:{
-    
+    labelFontStyle: "arial",
+    titleFontStyle: "arial",
     title: "Gęstość prądu "+ document.getElementById('jednostka').value,
+    
     minimum:document.getElementById('minimum').value,
     maximum:document.getElementById('maximum').value,
      },
